@@ -22,5 +22,24 @@ public class Main {
             sum += fruitprice;
         }
         System.out.println("Average Price: " + sum/fruitPrices.size());
+        System.out.println(fruitPrices.containsKey("사과"));
+        System.out.println(fruitPrices.containsKey("두리안"));
+        System.out.println(fruitPrices.containsValue(17980));
+        System.out.println(fruitPrices.containsValue(50000));
+
+        System.out.println(fruitPrices.getOrDefault("사과",500));
+        System.out.println(fruitPrices.getOrDefault("사과",20000));
+        System.out.println(fruitPrices.getOrDefault("대추야자",500));
+
+        fruitPrices.replace("사과", 10000);
+        fruitPrices.remove("메론");
+
+        for(Map.Entry<String, Integer> entry : fruitPrices.entrySet()) {
+            System.out.println(entry.getKey() + entry.getValue());
+        }
+
+        for(String key: fruitPrices.keySet()) {
+            System.out.println(key);
+        }
     }
 }
